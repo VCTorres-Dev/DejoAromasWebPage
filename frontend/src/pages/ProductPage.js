@@ -1,4 +1,3 @@
-// frontend/src/pages/ProductPage.js
 import React from "react";
 
 const ProductPage = () => {
