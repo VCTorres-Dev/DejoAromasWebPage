@@ -1,15 +1,21 @@
+// backend/index.js
 const express = require("express");
+const mongoose = require("mongoose");
+const cors = require("cors");
 const app = express();
-const port = process.env.PORT || 5000;
-const productRoutes = require("./routes/productRoutes");
-const connectDB = require("./config/db");
 
-connectDB();
+mongoose.connect("mongodb://localhost:27017/dejo_aromas", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+const db = mongoose.connection;
+db.on("error", (error) => console.error(error));
+db.once("open", () => console.log("Connected to Database"));
 
+app.use(cors());
 app.use(express.json());
 
+const productRoutes = require("./routes/productRoutes");
 app.use("/api", productRoutes);
 
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
+app.listen(5000, () => console.log("Server Started"));
