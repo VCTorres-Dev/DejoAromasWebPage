@@ -1,20 +1,57 @@
-/* frontend/src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 
 body {
-  font-family: 'Inter', sans-serif;
-  background-color: #f7f8fc;
-  color: #333;
-  margin: 0;
-  padding: 0;
+  background-image: url('C:\Users\Migthynice\Documents\Workspace\DA_Page\frontend\public\images\background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  margin: 0;
-  padding: 0;
+.overlay {
+  @apply bg-black bg-opacity-60 min-h-screen flex flex-col items-center justify-center text-white;
+}
+
+header, footer {
+  @apply bg-blue-900 text-white py-4;
 }
 
 .container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
+  @apply max-w-7xl mx-auto px-4;
+}
+
+nav ul {
+  @apply flex space-x-4;
+}
+
+nav ul li a {
+  @apply hover:text-gray-300 transition duration-300;
+}
+
+.main-content {
+  @apply p-8;
+}
+
+.product-card {
+  @apply bg-white bg-opacity-80 backdrop-filter backdrop-blur-lg p-6 rounded-lg shadow-lg mb-6;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product-card h2 {
+  @apply text-2xl font-bold mb-2;
+}
+
+h1 {
+  @apply text-4xl font-bold mb-4;
+}
+
+p {
+  @apply mb-6;
 }

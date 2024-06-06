@@ -1,12 +1,13 @@
 import React from "react";
-import ReactDOM from "react-dom/client"; // Importar createRoot desde react-dom/client
+import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import "flowbite";
+import "flowbite/dist/flowbite.min.css";
 
-const container = document.getElementById("root");
-const root = ReactDOM.createRoot(container); // Crear una raíz con createRoot
-
+const rootElement = document.getElementById("root");
+const root = ReactDOM.createRoot(rootElement);
 root.render(
   <React.StrictMode>
     <App />
