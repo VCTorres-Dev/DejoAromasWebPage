@@ -4,20 +4,17 @@
 
 /* Estilos personalizados */
 body {
-  margin: 0;
   font-family: 'Arial', sans-serif;
+  background-color: #1a202c;
+  color: #f7fafc;
 }
 
-.overlay {
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 2rem;
-  border-radius: 0.5rem;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-.product-card {
-  transition: transform 0.3s;
+a:hover {
+  text-decoration: underline;
 }
 
-.product-card:hover {
-  transform: scale(1.05);
-}
