@@ -1,20 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Estilos personalizados */
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #1a202c;
-  color: #f7fafc;
+  color: #2e2e2e;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Playfair Display', serif;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
+.header {
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-a:hover {
-  text-decoration: underline;
+.navbar a {
+  color: #2e2e2e;
+  transition: color 0.3s;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
 }
 
+.navbar a:hover {
+  color: #b29600;
+}
+
+/* Hero Section Styles */
+.hero-section {
+  position: relative;
+}
+
+.hero-section img {
+  filter: brightness(90%);
+}
+
+.hero-section .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+/* Values Section Styles */
+.values-section {
+  padding: 4rem 0;
+  background-color: #f9f9f9;
+}
+
+.values-section h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #1f2937;
+  font-family: 'Playfair Display', serif;
+}
+
+.values-section p {
+  text-align: center;
+  color: #6b7280;
+  margin-bottom: 3rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.values-section .value-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 320px;
+  margin: 0 1rem;
+}
+
+.values-section .value-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.values-section .value-card h3 {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  color: #1f2937;
+  font-family: 'Playfair Display', serif;
+}
+
+.values-section .value-card p {
+  text-align: center;
+  color: #4b5563;
+  font-family: 'Playfair Display', serif;
+}
+
+.values-section .value-card svg {
+  width: 3.5rem;
+  height: 3.5rem;
+  color: #b29600;
+}
+
+/* Gallery Section Styles */
+.gallery-section {
+  padding: 2rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.gallery-section img {
+  border-radius: 0.5rem;
+  transition: transform 0.3s ease;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.gallery-section img:hover {
+  transform: scale(1.05);
+}
+
+.gallery-section .gallery-item p {
+  display: none;
+}
+
+/* Testimonials Section Styles */
+.testimonials-section .testimonial-card {
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  text-align: center;
+}
+
+.testimonials-section .testimonial-card p {
+  color: #4a5568;
+  font-family: 'Playfair Display', serif;
+}
+
+/* Call to Action Section Styles */
+.cta-section {
+  background: #b29600;
+  color: white;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.cta-section button {
+  background: white;
+  color: #b29600;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.cta-section button:hover {
+  transform: scale(1.05);
+}
+
+/* Modal styles */
+.Modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.bg-gold {
+  background-color: #b29600;
+}
+
+.bg-gold-dark {
+  background-color: #8a7300;
+}
+
+@media (max-width: 640px) {
+  .text-3xl {
+    font-size: 2rem;
+  }
+  .text-5xl {
+    font-size: 3rem;
+  }
+  .text-xl {
+    font-size: 1rem;
+  }
+  .py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  .px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .sm\:px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  .lg\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Añadir estas clases al final del archivo CSS */
+.bg-white {
+  background-color: #ffffff;
+}
+
+.shadow-md {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.text-lg {
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.75rem; /* 28px */
+}
+
+.text-primary {
+  color: #1a202c; /* Primary color, puedes cambiarlo según tu tema */
+}
+
+.ml-2 {
+  margin-left: 0.5rem; /* 8px */
+}

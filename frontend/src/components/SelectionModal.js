@@ -1,9 +1,13 @@
 import React from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 import { XIcon } from "@heroicons/react/solid";
+import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 
 const SelectionModal = ({ isOpen, onClose }) => {
+  const navigate = useNavigate();
+
   return (
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={onClose}>
@@ -50,20 +54,14 @@ const SelectionModal = ({ isOpen, onClose }) => {
                   <button
                     type="button"
                     className="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-blue-500 border border-transparent rounded-lg hover:bg-blue-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500 transition-all"
-                    onClick={() => {
-                      // Navega a la página de aromas para dama
-                      window.location.href = "/catalogo/dama";
-                    }}
+                    onClick={() => navigate("/catalogo/dama")}
                   >
                     Aromas para Dama
                   </button>
                   <button
                     type="button"
                     className="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-blue-500 border border-transparent rounded-lg hover:bg-blue-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500 transition-all"
-                    onClick={() => {
-                      // Navega a la página de aromas para varón
-                      window.location.href = "/catalogo/varon";
-                    }}
+                    onClick={() => navigate("/catalogo/varon")}
                   >
                     Aromas para Varón
                   </button>
@@ -75,6 +73,11 @@ const SelectionModal = ({ isOpen, onClose }) => {
       </Dialog>
     </Transition>
   );
+};
+
+SelectionModal.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
 };
 
 export default SelectionModal;

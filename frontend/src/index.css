@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 body {
-  background-image: url('C:/Users/Migthynice/Documents/Workspace/DA_Page/frontend/public/images/background.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -14,7 +13,7 @@ body {
 }
 
 header, footer {
-  @apply bg-blue-900 text-white py-4;
+  @apply bg-white text-gray-800 py-4;
 }
 
 .container {
@@ -26,7 +25,7 @@ nav ul {
 }
 
 nav ul li a {
-  @apply hover:text-gray-300 transition duration-300;
+  @apply hover:text-gray-500 transition duration-300;
 }
 
 .main-content {
@@ -53,4 +52,130 @@ h1 {
 
 p {
   @apply mb-6;
+}
+
+.card1 {
+  background-color: #1a202c;
+  width: 250px;
+  height: 300px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  box-shadow: 2px 2px 19px rgba(0, 0, 0, 0.5);
+}
+
+.card1::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 262px;
+  height: 312px;
+  margin: auto;
+  background: linear-gradient(135deg, rgba(0, 0, 139, 1) 0%, rgba(72, 61, 139, 1) 35%, rgba(123, 104, 238, 1) 100%);
+  border-radius: 6px;
+}
+
+.card1::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 262px;
+  height: 312px;
+  margin: auto;
+  background: linear-gradient(135deg, rgba(0, 0, 139, 1) 0%, rgba(72, 61, 139, 1) 35%, rgba(123, 104, 238, 1) 100%);
+  border-radius: 6px;
+  filter: blur(20px);
+  transition: 2s;
+}
+
+.card1:hover::after {
+  animation: cardafter 2.5s infinite forwards;
+}
+
+@keyframes cardafter {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.content {
+  color: #e2e8f0;
+  text-align: center;
+}
+
+.heading {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.hero-section {
+  @apply bg-background;
+}
+
+.hero-section img {
+  @apply w-full h-screen object-cover;
+}
+
+.hero-overlay {
+  @apply absolute inset-0 bg-black bg-opacity-30 flex flex-col items-center justify-center text-center text-white;
+}
+
+.card {
+  @apply bg-secondary text-white shadow-lg rounded-lg p-6;
+}
+
+.card-header {
+  @apply text-2xl font-bold text-accent;
+}
+
+.card-body {
+  @apply text-sm;
+}
+
+.button-primary {
+  @apply bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded;
+}
+
+.gallery-item {
+  @apply relative overflow-hidden rounded-lg shadow-lg;
+}
+
+.gallery-image {
+  @apply w-full h-64 object-cover;
+}
+
+@media (max-width: 640px) {
+  .text-3xl {
+    font-size: 2rem;
+  }
+  .text-5xl {
+    font-size: 3rem;
+  }
+  .text-xl {
+    font-size: 1rem;
+  }
+  .py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  .px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .sm\:px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  .lg\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }

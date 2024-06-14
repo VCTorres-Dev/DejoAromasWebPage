@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 function Header() {
   return (
@@ -7,29 +9,45 @@ function Header() {
         <div className="text-2xl font-bold">Dejo Aromas</div>
         <ul className="flex space-x-4">
           <li>
-            <a href="#" className="hover:text-gray-300 transition duration-300">
+            <Link
+              to="/"
+              className="hover:text-gray-300 transition duration-300"
+            >
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#" className="hover:text-gray-300 transition duration-300">
+            <Link
+              to="/products"
+              className="hover:text-gray-300 transition duration-300"
+            >
               Products
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#" className="hover:text-gray-300 transition duration-300">
+            <Link
+              to="/about"
+              className="hover:text-gray-300 transition duration-300"
+            >
               About
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#" className="hover:text-gray-300 transition duration-300">
+            <Link
+              to="/contact"
+              className="hover:text-gray-300 transition duration-300"
+            >
               Contact
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
     </header>
   );
 }
+
+Header.propTypes = {
+  title: PropTypes.string,
+};
 
 export default Header;

@@ -1,36 +1,37 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import logo from "../images/logo.svg";
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  Link,
+} from "@nextui-org/react";
+import { DejoAromasLogo } from "./DejoAromasLogo";
 
-function Navbar() {
+export default function App() {
   return (
-    <nav className="bg-gray-900 py-4">
-      <div className="max-w-screen-xl mx-auto flex justify-between items-center px-4">
-        <Link to="/" className="flex items-center">
-          <img src={logo} className="h-8 mr-2" alt="Dejo Aromas Logo" />
-          <span className="text-white text-2xl font-semibold">Dejo Aromas</span>
-        </Link>
-        <div className="hidden md:flex space-x-4">
-          <Link to="/" className="text-gray-300 hover:text-white">
+    <Navbar shouldHideOnScroll variant="sticky" className="bg-white shadow-md">
+      <NavbarBrand>
+        <DejoAromasLogo />
+        <p className="font-bold text-lg ml-2">Dejo Aromas</p>
+      </NavbarBrand>
+      <NavbarContent className="hidden sm:flex gap-6" justify="center">
+        <NavbarItem>
+          <Link color="primary" href="/" className="text-lg">
             Home
           </Link>
-          <Link to="/catalogo/dama" className="text-gray-300 hover:text-white">
+        </NavbarItem>
+        <NavbarItem>
+          <Link color="primary" href="/catalogo-dama" className="text-lg">
             Catálogo Dama
           </Link>
-          <Link to="/catalogo/varon" className="text-gray-300 hover:text-white">
-            Catálogo Varon
+        </NavbarItem>
+        <NavbarItem>
+          <Link color="primary" href="/catalogo-varon" className="text-lg">
+            Catálogo Varón
           </Link>
-          <Link to="/about" className="text-gray-300 hover:text-white">
-            About
-          </Link>
-          <Link to="/services" className="text-gray-300 hover:text-white">
-            Services
-          </Link>
-        </div>
-        <div className="md:hidden">{/* Mobile menu button */}</div>
-      </div>
-    </nav>
+        </NavbarItem>
+      </NavbarContent>
+    </Navbar>
   );
 }
-
-export default Navbar;

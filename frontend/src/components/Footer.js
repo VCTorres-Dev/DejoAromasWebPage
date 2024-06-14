@@ -1,13 +1,13 @@
 import React from "react";
 
-function Footer() {
+const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white py-4">
+    <footer className="bg-white text-gray-800 py-4">
       <div className="container mx-auto text-center">
-        © 2024 Dejo Aromas. All rights reserved.
+        &copy; 2024 Dejo Aromas. All rights reserved.
       </div>
     </footer>
   );
-}
+};
 
 export default Footer;
